@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=lato);
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    color: #000;
+}
+
+.flip-container{
+    perspective: 1000px;
+}
+
+.front {
+    background-image: url('depan.jpeg');
+    background-size: cover;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+.back {
+    background-image: url('belakang.jpeg');
+    background-size: cover;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    transform: rotateY(180deg);
+}
+
+.flip-container:hover .flipper {
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+.flip-container, .front, .back{
+    height: 400px;
+    width: 600px;
+    border-radius: 20px;
+}
+
+.flip-container:hover .flipper{
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+.flipper{
+    transition: .5s;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.front, .back{
+    backface-visibility: hidden;
+    position: absolute;
+}
+h1, p, .icons a{
+    color: #000;
+    font-family: 'Lato';
+    margin-left: 30%;
+    line-height: 90%;
+}
+
+h1 {
+    margin-top: 5%;
+}
+
+p {
+    font-size: 16px;
+    padding-bottom: 15px;
+    width: 35%;
+    border-bottom: 2px solid #000;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.icons {
+    margin-top: 25px;
+}
+
+.icon-group {
+    margin-top: 8px;
+}
+
+.back .icons span, .back .icons a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+}
+
+.back .icons a:hover {
+    color: #ff0000;
+}
+
+.icon-box {
+    position: relative;
+    color: #000;
+    font-size: 24px;
+    height: 35px;
+    width: 35px;
+    padding: 5px;
+    top: 75px;
+    left: 30%;
+    display: inline-block;
+    border: 2px solid #000;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.icon-box:hover {
+    box-shadow: inset 0 50px 0 0 #000;
+    color: #fff;
+}
+
+.icon-box i {
+    margin-top: 5px;
+}
